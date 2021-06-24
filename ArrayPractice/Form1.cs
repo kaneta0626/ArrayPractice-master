@@ -45,6 +45,8 @@ namespace ArrayPractice
             score--;
             scoreLabel.Text = $"Score {score:000}";
 
+            Point fpos = PointToClient(MousePosition);
+
             for (int i = 0; i < 100; i ++)
             {
 
@@ -52,61 +54,28 @@ namespace ArrayPractice
                 labels[i].Top += vy[i];
             }
 
-
-            if (label1.Left < 0)
+            for (int i = 0; i < 100; i ++)
             {
-                vx[0] = Math.Abs(vx[0]);
-            }
-            if (label1.Top < 0)
-            {
-                vy[0] = Math.Abs(vy[0]);
-            }
-            if (label1.Right > ClientSize.Width)
-            {
-                vx[0] = -Math.Abs(vx[0]);
-            }
-            if (label1.Bottom > ClientSize.Height)
-            {
-                vy[0] = -Math.Abs(vy[0]);
-            }
-
-
-            if (label2.Left < 0)
-            {
-                vx[1] = Math.Abs(vx[1]);
-            }
-            if (label2.Top < 0)
-            {
-                vy[1] = Math.Abs(vy[1]);
-            }
-            if (label2.Right > ClientSize.Width)
-            {
-                vx[1] = -Math.Abs(vx[1]);
-            }
-            if (label2.Bottom > ClientSize.Height)
-            {
-                vy[1] = -Math.Abs(vy[1]);
+                if (labels[i].Left < 0)
+                {
+                    vx[i] = Math.Abs(vx[i]);
+                }
+                if (labels[i].Top < 0)
+                {
+                    vy[i] = Math.Abs(vy[i]);
+                }
+                if (labels[i].Right > ClientSize.Width)
+                {
+                    vx[i] = -Math.Abs(vx[i]);
+                }
+                if (labels[i].Bottom > ClientSize.Height)
+                {
+                    vy[i] = -Math.Abs(vy[i]);
+                }
             }
 
 
-            if (label3.Left < 0)
-            {
-                vx[2] = Math.Abs(vx[2]);
-            }
-            if (label3.Top < 0)
-            {
-                vy[2] = Math.Abs(vy[2]);
-            }
-            if (label3.Right > ClientSize.Width)
-            {
-                vx[2] = -Math.Abs(vx[2]);
-            }
-            if (label3.Bottom > ClientSize.Height)
-            {
-                vy[2] = -Math.Abs(vy[2]);
-            }
-
-            Point fpos = PointToClient(MousePosition);
+            
 
             if ((fpos.X >= label1.Left)
                 && (fpos.X < label1.Right)
