@@ -14,22 +14,29 @@ namespace ArrayPractice
     {
         static Random rand = new Random();
 
-        int vx = rand.Next(-20, 21);
-        int vy = rand.Next(-20, 21);
-
-        int vx1 = rand.Next(-20, 21);
-        int vy1 = rand.Next(-20, 21);
-
-        int vx2 = rand.Next(-20, 21);
-        int vy2 = rand.Next(-20, 21);
-
-
+        int [] vx = new int[3];
+        int [] vy = new int[3];
 
         int score = 100;
 
         public Form1()
         {
             InitializeComponent();
+
+            for (int ii=0; ii<3; ii++)
+            {
+                MessageBox.Show(""+ii);
+            }
+
+            int i = 0;
+            vx[i] = rand.Next(-20, 21);
+            vy[i] = rand.Next(-20,20);
+            i++;
+            vx[i] = rand.Next(-20, 21);
+            vy[i] = rand.Next(-20,20);
+            i++;
+            vx[i] = rand.Next(-20, 21);
+            vy[i] = rand.Next(-20,20);
 
 
             label1.Left = rand.Next(ClientSize.Width - label1.Width);
@@ -47,66 +54,66 @@ namespace ArrayPractice
             score--;
             scoreLabel.Text = $"Score {score:000}";
 
-            label1.Left += vx;
-            label1.Top += vy;
+            label1.Left += vx[0];
+            label1.Top += vy[0];
 
-            label2.Left += vx1;
-            label2.Top += vy1;
+            label2.Left += vx[1];
+            label2.Top += vy[1];
 
-            label3.Left += vx2;
-            label3.Top += vy2;
+            label3.Left += vx[2];
+            label3.Top += vy[2];
 
             if (label1.Left < 0)
             {
-                vx = Math.Abs(vx);
+                vx[0] = Math.Abs(vx[0]);
             }
             if (label1.Top < 0)
             {
-                vy = Math.Abs(vy);
+                vy[0] = Math.Abs(vy[0]);
             }
             if (label1.Right > ClientSize.Width)
             {
-                vx = -Math.Abs(vx);
+                vx[0] = -Math.Abs(vx[0]);
             }
             if (label1.Bottom > ClientSize.Height)
             {
-                vy = -Math.Abs(vy);
+                vy[0] = -Math.Abs(vy[0]);
             }
 
 
             if (label2.Left < 0)
             {
-                vx = Math.Abs(vx1);
+                vx[1] = Math.Abs(vx[1]);
             }
             if (label2.Top < 0)
             {
-                vy = Math.Abs(vy1);
+                vy[1] = Math.Abs(vy[1]);
             }
             if (label2.Right > ClientSize.Width)
             {
-                vx = -Math.Abs(vx1);
+                vx[1] = -Math.Abs(vx[1]);
             }
             if (label2.Bottom > ClientSize.Height)
             {
-                vy = -Math.Abs(vy1);
+                vy[1] = -Math.Abs(vy[1]);
             }
 
 
             if (label3.Left < 0)
             {
-                vx = Math.Abs(vx2);
+                vx[2] = Math.Abs(vx[2]);
             }
             if (label3.Top < 0)
             {
-                vy = Math.Abs(vy2);
+                vy[2] = Math.Abs(vy[2]);
             }
             if (label3.Right > ClientSize.Width)
             {
-                vx = -Math.Abs(vx2);
+                vx[2] = -Math.Abs(vx[2]);
             }
             if (label3.Bottom > ClientSize.Height)
             {
-                vy = -Math.Abs(vy2);
+                vy[2] = -Math.Abs(vy[2]);
             }
 
             Point fpos = PointToClient(MousePosition);
