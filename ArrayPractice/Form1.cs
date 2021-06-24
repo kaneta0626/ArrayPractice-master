@@ -85,7 +85,6 @@ namespace ArrayPractice
 
             }
             
-
             if ((label1.Visible == false)
                 && (label2.Visible == false)
                 && (label3.Visible == false))
@@ -93,6 +92,14 @@ namespace ArrayPractice
                     {
                         timer1.Enabled = false;
                     }
+        }
+
+        private void scoreLabel_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i ++)
+            {
+                MessageBox.Show("" + i);
+            }
         }
     }
 }
