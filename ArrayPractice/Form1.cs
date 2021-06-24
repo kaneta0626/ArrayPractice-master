@@ -45,14 +45,13 @@ namespace ArrayPractice
             score--;
             scoreLabel.Text = $"Score {score:000}";
 
-            label1.Left += vx[0];
-            label1.Top += vy[0];
+            for (int i = 0; i < 100; i ++)
+            {
 
-            label2.Left += vx[1];
-            label2.Top += vy[1];
+                labels[i].Left += vx[i];
+                labels[i].Top += vy[i];
+            }
 
-            label3.Left += vx[2];
-            label3.Top += vy[2];
 
             if (label1.Left < 0)
             {
