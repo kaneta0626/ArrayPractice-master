@@ -28,8 +28,8 @@ namespace ArrayPractice
 
             for (int i = 0; i < LabelMax; i++)
             {
-                vx[i] = rand.Next(-20, 21);
-                vy[i] = rand.Next(-20, 20);
+                vx[i] = rand.Next(-10, 11);
+                vy[i] = rand.Next(-10, 11);
 
                 labels[i] = new Label();
                 labels[i].AutoSize = true;
