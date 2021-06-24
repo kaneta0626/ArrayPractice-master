@@ -14,8 +14,8 @@ namespace ArrayPractice
     {
         static Random rand = new Random();
 
-        int [] vx = new int[3];
-        int [] vy = new int[3];
+        int [] vx = new int[100];
+        int [] vy = new int[100];
         Label[] labels = new Label[100];
 
         int score = 100;
@@ -24,7 +24,7 @@ namespace ArrayPractice
         {
             InitializeComponent();
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 100; i++)
             {
                 vx[i] = rand.Next(-20, 21);
                 vy[i] = rand.Next(-20, 20);
