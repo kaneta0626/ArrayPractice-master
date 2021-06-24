@@ -50,6 +50,12 @@ namespace ArrayPractice
             label1.Left += vx;
             label1.Top += vy;
 
+            label2.Left += vx1;
+            label2.Top += vy1;
+
+            label3.Left += vx2;
+            label3.Top += vy2;
+
             if (label1.Left < 0)
             {
                 vx = Math.Abs(vx);
@@ -67,13 +73,59 @@ namespace ArrayPractice
                 vy = -Math.Abs(vy);
             }
 
+
+            if (label2.Left < 0)
+            {
+                vx = Math.Abs(vx1);
+            }
+            if (label2.Top < 0)
+            {
+                vy = Math.Abs(vy1);
+            }
+            if (label2.Right > ClientSize.Width)
+            {
+                vx = -Math.Abs(vx1);
+            }
+            if (label2.Bottom > ClientSize.Height)
+            {
+                vy = -Math.Abs(vy1);
+            }
+
+
+            if (label3.Left < 0)
+            {
+                vx = Math.Abs(vx2);
+            }
+            if (label3.Top < 0)
+            {
+                vy = Math.Abs(vy2);
+            }
+            if (label3.Right > ClientSize.Width)
+            {
+                vx = -Math.Abs(vx2);
+            }
+            if (label3.Bottom > ClientSize.Height)
+            {
+                vy = -Math.Abs(vy2);
+            }
+
             Point fpos = PointToClient(MousePosition);
 
             if ((fpos.X >= label1.Left)
                 && (fpos.X < label1.Right)
                 && (fpos.Y >= label1.Top)
                 && (fpos.Y < label1.Bottom))
-            {
+
+                if ((fpos.X >= label2.Left)
+                && (fpos.X < label2.Right)
+                && (fpos.Y >= label2.Top)
+                && (fpos.Y < label2.Bottom))
+
+                    if ((fpos.X >= label3.Left)
+                    && (fpos.X < label3.Right)
+                    && (fpos.Y >= label3.Top)
+                    && (fpos.Y < label3.Bottom))
+                    {
                 timer1.Enabled = false;
             }
         }
