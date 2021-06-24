@@ -16,6 +16,7 @@ namespace ArrayPractice
 
         int [] vx = new int[3];
         int [] vy = new int[3];
+        Label[] labels = new Label[100];
 
         int score = 100;
 
@@ -23,22 +24,20 @@ namespace ArrayPractice
         {
             InitializeComponent();
 
-            for (int i=0; i<3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 vx[i] = rand.Next(-20, 21);
                 vy[i] = rand.Next(-20, 20);
+
+                labels[i] = new Label();
+                labels[i].AutoSize = true;
+                labels[i].Text = "★";
+                Controls.Add(labels[i]);
+
+                labels[i].Left = rand.Next(ClientSize.Width - labels[i].Width);
+                labels[i].Top = rand.Next(ClientSize.Height - labels[i].Height);
             }
-
-            
-
-            label1.Left = rand.Next(ClientSize.Width - label1.Width);
-            label1.Top = rand.Next(ClientSize.Height - label1.Height);
-
-            label2.Left = rand.Next(ClientSize.Width - label2.Width);
-            label2.Top = rand.Next(ClientSize.Height - label2.Height);
-
-            label3.Left = rand.Next(ClientSize.Width - label3.Width);
-            label3.Top = rand.Next(ClientSize.Height - label3.Height);
+           
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -142,7 +141,7 @@ namespace ArrayPractice
                 && (label3.Visible == false))
 
                     {
-                        //timer1.Enabled = false;
+                        timer1.Enabled = false;
                     }
         }
     }
