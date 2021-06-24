@@ -23,21 +23,13 @@ namespace ArrayPractice
         {
             InitializeComponent();
 
-            for (int ii=0; ii<3; ii++)
+            for (int i=0; i<3; i++)
             {
-                MessageBox.Show(""+ii);
+                vx[i] = rand.Next(-20, 21);
+                vy[i] = rand.Next(-20, 20);
             }
 
-            int i = 0;
-            vx[i] = rand.Next(-20, 21);
-            vy[i] = rand.Next(-20,20);
-            i++;
-            vx[i] = rand.Next(-20, 21);
-            vy[i] = rand.Next(-20,20);
-            i++;
-            vx[i] = rand.Next(-20, 21);
-            vy[i] = rand.Next(-20,20);
-
+            
 
             label1.Left = rand.Next(ClientSize.Width - label1.Width);
             label1.Top = rand.Next(ClientSize.Height - label1.Height);
@@ -150,7 +142,7 @@ namespace ArrayPractice
                 && (label3.Visible == false))
 
                     {
-                        timer1.Enabled = false;
+                        //timer1.Enabled = false;
                     }
         }
     }
